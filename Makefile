@@ -63,3 +63,4 @@ push:
 	git push origin -f "v$(IMAGE_VERSION)"
 	echo "Adding VERSION artifact"
 	echo $(IMAGE_VERSION)-$(SHORT_SHA) > $(CIRCLE_ARTIFACTS)/VERSION
+	
