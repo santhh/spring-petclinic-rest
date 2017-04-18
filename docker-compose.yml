@@ -1,0 +1,26 @@
+version: '2.0'
+
+services:
+  restservices:
+    image: springapp/spring-petclinic
+    ports:
+    - "9966:9966"
+    links:
+      - postgredb
+    depends_on:
+      - postgredb 
+    environment: 
+      - SERVICE_9966_NAME=spring-petclinic
+      - SERVICE_TAGS=public   
+    network_mode: "bridge"
+  
+  postgredb:
+    image: postgres
+    ports:
+    - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=petclinic
+      - POSTGRES_DB=petclinic 
+ 
+    network_mode: "bridge"
