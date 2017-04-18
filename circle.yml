@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+  pre:
+    - "curl -s -k -L -o build-tools.zip https://github.mdl.cloud/deployer/build-tools/archive/master.zip && unzip build-tools.zip && rm build-tools.zip"
+
+dependencies:
+  pre:
+    - ../build-tools-master/docker/build.sh
+
+deployment:
+  pipeline:
+    branch: [master]
+    commands:
+      - ../build-tools-master/docker/push.sh
+
+notify:
+  webhooks:
+    - url: https://deployer.mdl.cloud/trigger

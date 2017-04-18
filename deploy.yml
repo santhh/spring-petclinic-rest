@@ -1,0 +1,10 @@
+name: masud-hasan-spring-petclinic-rest
+image: docker.mdl.cloud/masud_hasan/spring-petclinic-rest
+
+tags:
+  - private
+
+service:
+  container:
+    count: 1
+    port: 8080
