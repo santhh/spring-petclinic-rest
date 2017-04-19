@@ -4,16 +4,19 @@ machine:
       oraclejdk8
   services:
     - docker
+  pre:
+    - "curl -s -k -L -o tmp.zip https://github.mdl.cloud/deployer/build-tools/archive/master.zip && unzip tmp.zip && rm tmp.zip"
 
 dependencies:
   pre:
-    - make build
+    - mvn clean package
+    - ../build-tools-master/docker/build.sh
 
 deployment:
   pipeline:
     branch: [master]
     commands:
-      - make push
+      - ../build-tools-master/docker/push.sh
 
 notify:
   webhooks:

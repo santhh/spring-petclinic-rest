@@ -1,19 +1,7 @@
 version: 2
 
-# Which pipeline template to use.
-# '/project pipeline-help' in Slack for a list of possible pipeline templates
+
 template: default
-
-# List below the optional stages you wish to include in your pipeline
-#stages:
-#  - alpha
-#  - beta
-
-# List below the optional tasks you wish to include in your pipeline
-#options:
-#  - db_migration
-
-# Define the notification recipients for messages sent by the pipeline.
-#notifications:
-#  slack:
-#    - "#some-channel"
+notifications:
+ slack:
+  - "#myprojects"

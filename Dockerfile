@@ -1,4 +1,4 @@
-FROM java:8
+FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
 ADD ./target/docker/spring-petclinic-1.5.2.jar app.jar
 RUN bash -c 'touch /app.jar'
