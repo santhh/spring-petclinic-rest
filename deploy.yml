@@ -1,6 +1,7 @@
 name: masud-hasan-spring-petclinic-rest
 image: docker.mdl.cloud/masud_hasan/spring-petclinic-rest
-
+secrets:
+  - type: postgresql
 tags:
   - public
 
@@ -9,3 +10,10 @@ service:
     count: 1
     memory: 1024
   
+env:
+  "vault/postgresql-${app}/creds/${role}":
+    DB_USER: postgres
+    DB_PASSWORD: petclinic
+
+migrate:
+  cmd: migrate
