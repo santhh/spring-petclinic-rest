@@ -8,4 +8,4 @@ service:
   container:
     count: 1
     memory: 1024
-    port: 8080
+  
