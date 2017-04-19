@@ -5,22 +5,9 @@ services:
     image: docker.mdl.cloud/masud_hasan/spring-petclinic-rest:latest
     ports:
     - "9966:9966"
-    links:
-      - postgredb
-    depends_on:
-      - postgredb 
+ 
     environment: 
       - SERVICE_9966_NAME=spring-petclinic
       - SERVICE_TAGS=public   
     network_mode: "bridge"
   
-  postgredb:
-    image: docker.mdl.cloud/DevOps/postgres:latest
-    ports:
-    - "5432:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=petclinic
-      - POSTGRES_DB=petclinic 
- 
-    network_mode: "bridge"
