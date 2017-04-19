@@ -12,8 +12,8 @@ service:
   
 env:
   "vault/postgresql-${app}/creds/${role}":
-    DB_USER: postgres
-    DB_PASSWORD: petclinic
+    DB_USER: username
+    DB_PASSWORD: password
 
 migrate:
   cmd: migrate
