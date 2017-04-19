@@ -7,4 +7,5 @@ tags:
 service:
   container:
     count: 1
+    memory: 1024
     port: 9966
