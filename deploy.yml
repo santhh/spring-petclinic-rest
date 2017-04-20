@@ -14,6 +14,3 @@ env:
   "vault/postgresql-${app}/creds/${role}":
     DB_USER: username
     DB_PASSWORD: password
-
-migrate:
-  cmd: migrate
