@@ -1,3 +1,9 @@
+CREATE DATABASE petclinic
+  	WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       CONNECTION LIMIT = -1;
+       
 CREATE TABLE IF NOT EXISTS vets (
   id SERIAL,
   first_name VARCHAR(30),
