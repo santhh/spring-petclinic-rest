@@ -8,7 +8,7 @@ tags:
 service:
   container:
     count: 1
-    memory: 1024
+    memory: 2048
   
 env:
   "vault/postgresql-${app}/creds/${role}":
