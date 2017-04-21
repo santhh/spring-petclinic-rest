@@ -1,6 +1,7 @@
 version: 2
-
 template: default
+options:
+ - db_migration
 notifications:
  slack:
   - "#myprojects"
